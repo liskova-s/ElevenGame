@@ -1,4 +1,4 @@
-package ElevenGame.VikVlaEg;
+package vikvlaeg;
 
 public class Card {
     private String symbol;

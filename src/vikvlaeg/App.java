@@ -1,7 +1,6 @@
-package ElevenGame.VikVlaEg;
+package vikvlaeg;
 
-import ElevenGame.DataStore;
-import ElevenGame.GameInterface;
+import elevengame.GameInterface;
 
 import java.util.*;
 
@@ -21,9 +20,9 @@ public class App {
         do {
             choice = sc.nextInt();
             switch (choice) {
-                case 1 -> System.out.println(rules.rules());
-                case 2 -> System.out.println(rules.beatifulRules());
-                case 3 -> {
+                case 1 : System.out.println(rules.rules());
+                case 2 : System.out.println(rules.beatifulRules());
+                case 3 : {
                     for (int i = 0; i < (game.getDeckSize() / 2) + 1; i++) {
                         System.out.println(game.getName());
                         System.out.println("Cards in the deck " + game.getDeckSize());

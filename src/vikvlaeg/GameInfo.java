@@ -1,17 +1,16 @@
-package ElevenGame.VikVlaEg;
+package vikvlaeg;
 
 public class GameInfo {
 
     public String rules() {
-        return """
-                Rules of ElevenGame
+        return "Rules of ElevenGame";
 
-                You will have a 9 cards on the table and 43 on the deck
-                To win, it is necessary that there are no cards left on the table or in the deck
-                You can remove 2 cards, which give 11 or 3 cards, which give a triple (jack, queen, king)
-                If you don't answer correctly, you lose
-                To exit the game, write exit
-                Have fun""";
+//                You will have a 9 cards on the table and 43 on the deck
+//                To win, it is necessary that there are no cards left on the table or in the deck
+//                You can remove 2 cards, which give 11 or 3 cards, which give a triple (jack, queen, king)
+//                If you don't answer correctly, you lose
+//                To exit the game, write exit
+//                Have fun";
     }
 
     public String beatifulRules() {

@@ -1,7 +1,7 @@
-package ElevenGame.VikVlaEg;
+package vikvlaeg;
 
-import ElevenGame.DataStore;
-import ElevenGame.GameInterface;
+import elevengame.DataStore;
+import elevengame.GameInterface;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,7 +10,6 @@ import java.util.List;
 public class GameImp implements GameInterface {
     private List<Card> deck = new ArrayList<>();
     private List<Card> playerDeck = new ArrayList<>(nCards());
-
 
     public GameImp() {
         String[] values = DataStore.loadValues();
@@ -45,6 +44,7 @@ public class GameImp implements GameInterface {
 
     @Override
     public String getCardDescriptionAt(int index) {
+        
         return index + ". " + playerDeck.get(index).getSymbol() + "-" + playerDeck.get(index).getValue();
     }
 
