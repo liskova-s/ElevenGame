@@ -1,8 +1,9 @@
-package vol_sta;
+package vol_sta.app;
 
 /**
  * @author starkov
  */
+import vol_sta.app.Card;
 import java.util.ArrayList;
 import java.util.Collections;
 

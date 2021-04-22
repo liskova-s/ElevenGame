@@ -1,14 +1,16 @@
-package vol_sta;
+package vol_sta.ui;
 
+import elevengame.GameInterface;
+import vol_sta.app.Game;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Interface {
+public class UI {
     
     public static void runGame(){
         Scanner sc = new Scanner(System.in);
-        Game g = new Game();
+        GameInterface g = new Game();
         
         System.out.println(g.getName());
 
@@ -39,7 +41,7 @@ public class Interface {
      * @param g
      * @return String - display
      */
-    private static String display(Game g) {
+    private static String display(GameInterface g) {
         StringBuilder builder = new StringBuilder("Velikost balíčku: "+g.getDeckSize()+"\n");
         for (int i = 0; i < g.nCards(); i++) {
             builder.append(String.format("%2d",i));
@@ -52,6 +54,10 @@ public class Interface {
         builder.append("Zadejte počet vybraných karet a poté jejich cisla:\n");
 
         return builder.toString();
+    }
+    
+    public static void main(String[] args) {
+        UI.runGame();
     }
     
 }

@@ -1,4 +1,6 @@
-package vol_sta;
+package vol_sta.app;
+
+import vol_sta.app.Card;
 
 /**
  * @author vvoleman

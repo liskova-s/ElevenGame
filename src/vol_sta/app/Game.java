@@ -1,10 +1,13 @@
-package vol_sta;
+package vol_sta.app;
 
+import vol_sta.app.Deck;
+import vol_sta.app.Card;
 import elevengame.DataStore;
 import elevengame.GameInterface;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import vol_sta.ui.UI;
 
 public class Game implements GameInterface {
 
@@ -133,7 +136,5 @@ public class Game implements GameInterface {
         return true;
     }
 
-    public static void main(String[] args) {
-        Interface.runGame();
-    }
+    
 }

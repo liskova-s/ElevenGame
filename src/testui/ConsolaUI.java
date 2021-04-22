@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import vikvlaeg.logic.GameImp;
+import vol_sta.app.Game;
 
 /**
  * UI for card games e.g. Eleven game
@@ -18,7 +19,7 @@ public class ConsolaUI {
     public void start() {
         boolean nextGame = true;
         while (nextGame){
-            game = new GameImp(); //connect UI with the game logic
+            game = new Game(); //connect UI with the game logic
             playGame();
             System.out.println("Chceš hrát znova? a/n");
             nextGame = sc.next().equalsIgnoreCase("a");
