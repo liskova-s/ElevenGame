@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 //comment1
+=======
+//comment
+>>>>>>> 2c2460116152b6a3b39900b65ef4e201f018b031
 package vevana;
 
 public class Card {
