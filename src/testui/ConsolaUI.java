@@ -4,7 +4,7 @@ import elevengame.GameInterface;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import vikvlaeg.GameImp;
+import vikvlaeg.logic.GameImp;
 
 /**
  * UI for card games e.g. Eleven game
@@ -49,7 +49,7 @@ public class ConsolaUI {
 
     private void displayCards() {
         for (int i = 0; i < game.nCards(); i++) {
-            System.out.format("%1d. %10s   ", i, game.getCardDescriptionAt(i));
+            System.out.format("%1d. %10s   ", i+1, game.getCardDescriptionAt(i));
             System.out.println("");
         }
     }
@@ -61,7 +61,7 @@ public class ConsolaUI {
     private List<Integer> toInt(String[] selectedCards) {
         List<Integer> iSelectedCards = new ArrayList();
         for (int i = 0; i < selectedCards.length; i++) {
-            iSelectedCards.add(Integer.parseInt(selectedCards[i]));
+            iSelectedCards.add(Integer.parseInt(selectedCards[i])-1);
         }
         return iSelectedCards;
     }

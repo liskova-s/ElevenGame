@@ -1,5 +1,6 @@
-package vikvlaeg;
+package vikvlaeg.logic;
 
+import vikvlaeg.logic.Card;
 import elevengame.DataStore;
 import elevengame.GameInterface;
 
@@ -45,11 +46,11 @@ public class GameImp implements GameInterface {
     @Override
     public String getCardDescriptionAt(int index) {
         
-        return index + ". " + playerDeck.get(index).getSymbol() + "-" + playerDeck.get(index).getValue();
+        return playerDeck.get(index).getSymbol() + "-" + playerDeck.get(index).getValue();
     }
 
     @Override
-    public boolean anotherPlayIsPossible() { //разобраться какого хуя не работает сравнение
+    public boolean anotherPlayIsPossible() { 
         String[] triple = {"jack", "queen", "king"};
         int jackCount = 0;
         int queenCount = 0;

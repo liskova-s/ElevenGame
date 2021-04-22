@@ -1,4 +1,4 @@
-package vikvlaeg;
+package vikvlaeg.ui;
 
 public class GameInfo {
 

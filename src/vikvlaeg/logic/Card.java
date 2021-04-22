@@ -1,4 +1,4 @@
-package vikvlaeg;
+package vikvlaeg.logic;
 
 public class Card {
     private String symbol;

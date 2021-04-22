@@ -1,5 +1,7 @@
-package vikvlaeg;
+package vikvlaeg.ui;
 
+import vikvlaeg.ui.GameInfo;
+import vikvlaeg.logic.GameImp;
 import elevengame.GameInterface;
 
 import java.util.*;
