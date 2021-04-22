@@ -5,8 +5,9 @@ import Kotash.UI.Helpers.Colors;
 import elevengame.GameInterface;
 
 import java.util.*;
+import vevana.GameImplementation;
 import vikvlaeg.logic.GameImp;
-import vol_sta.app.Game;
+//import vol_sta.app.Game;
 
 public class UI {
     public static Scanner sc = new Scanner(System.in);
@@ -14,7 +15,7 @@ public class UI {
     public static void runGame() {
         startGame();
 
-        GameInterface game = new Game();
+        GameInterface game = new GameImplementation();
 
         while (!game.isWon() && game.anotherPlayIsPossible()) {
             printTable(generateTable(getCards(game)));
