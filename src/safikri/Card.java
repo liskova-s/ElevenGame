@@ -68,10 +68,11 @@ public class Card {
         }
         return String.format("%s %s",textValue, textSymbol);  
     }
-    
+    /*
     public static void main(String[] args) {
         Card c = new Card("2","spades");
         System.out.println(c.getRank());
     }
+*/
      
 }

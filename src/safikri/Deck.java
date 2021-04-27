@@ -9,6 +9,7 @@ import java.util.List;
 import elevengame.DataStore;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Stack;
 import safikri.Card;
 
 /**
@@ -17,30 +18,30 @@ import safikri.Card;
  */
 public class Deck {
 
-    private List<Card> deckList;                        //Deck of cards not played yet
-    private List<Card> playedDeckList;                  //Garbage deck of cards
+    private Stack<Card> deckStack;                   //Garbage deck of cards
     private String[] values = DataStore.loadValues();
     private String[] symbols = DataStore.loadSymbols();
     final private int N = 52;                           //Number of cards in a deck
 
     public Deck() {
-        deckList = new ArrayList<>();
+        deckStack = new Stack<>();
         for (int i = 0; i < (getPermts().length); i++) {
-            deckList.add(Card.getByFactory(getPermts()[i]));
+            deckStack.add(Card.getByFactory(getPermts()[i]));
         }
-        playedDeckList=new ArrayList<>();
     }
 
     public void shuffle() {
-        Collections.shuffle(deckList);
+        Collections.shuffle(deckStack);
     }
 
     public Card draw() {
-        Card c=deckList.get(0);
-        playedDeckList.add(c);
-        deckList.remove(0);
-        return c;
+        return deckStack.pop() ;
     }
+
+    public Stack<Card> getDeckStack() {
+        return deckStack;
+    }
+    
 
     private String[][] getPermts(){
         String[][] permts = new String[N][2];
@@ -54,7 +55,7 @@ public class Deck {
     }
 
     public int getSize(){
-        return deckList.size();
+        return deckStack.size();
     }
     
    
@@ -65,19 +66,19 @@ public class Deck {
             System.out.format("%s %s, ", array[0], array[1]);
         }
         System.out.println("");
-        for (Card c : d.deckList) {
+        for (Card c : d.deckStack) {
             System.out.print(c.toString());
         }
         d.shuffle();
         System.out.println("");
-        for (Card c : d.deckList) {
+        for (Card c : d.deckStack) {
             System.out.print(c.toString());
         }
         System.out.println("");
         Card a=d.draw();
         System.out.println(a.toString());
         System.out.println("");
-        for (Card c : d.deckList) {
+        for (Card c : d.deckStack) {
             System.out.print(c.toString());
         }
     }

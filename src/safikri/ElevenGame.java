@@ -13,24 +13,33 @@ import java.util.List;
  * @author sarka
  */
 public class ElevenGame implements GameInterface {
+
     private Deck gameDeck;
     private Board gameBoard;
-    private String name="♦ ♠ Eleven Game ♣ ♥";
-    private int nOfCards=9;
-  
-    public ElevenGame(){
-        gameDeck=new Deck();
-        gameBoard=new Board(gameDeck);
+    private String name = "♦ ♠ Eleven Game ♣ ♥";
+    private int nOfCards = 9;
+
+    public ElevenGame() {
+        gameDeck = new Deck();
+        gameBoard = new Board(gameDeck);
     }
-    
+
     @Override
     public String getName() {
         return name;
     }
 
+    public Board getGameBoard() {
+        return gameBoard;
+    }
+
+    public Deck getGameDeck() {
+        return gameDeck;
+    }
+
     @Override
     public int nCards() {
-       return nOfCards;
+        return nOfCards;
     }
 
     @Override
@@ -45,17 +54,34 @@ public class ElevenGame implements GameInterface {
 
     @Override
     public boolean anotherPlayIsPossible() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (gameBoard.triplePresent() || gameBoard.elevenPresent()) {
+            return true;
+        }
+        return false;
     }
 
     @Override
     public boolean playAndReplace(List<Integer> iSelectedCards) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (iSelectedCards.size() < 2 || iSelectedCards.size() > 3) {
+            return false;
+        } else if (iSelectedCards.size() == 3) {
+            for (int i = 0; i < 3; i++) {
+                if (gameBoard.getBoard()[iSelectedCards.get(i)].getRank() != 0) {
+                    return false;
+                }
+            }
+            return true;
+        } else {
+            if (gameBoard.getBoard()[iSelectedCards.get(0)].getRank() + gameBoard.getBoard()[iSelectedCards.get(1)].getRank() == 11) {
+                return true;
+            }
+            return false;
+        }
     }
 
     @Override
     public boolean isWon() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return gameBoard.getDeck().getDeckStack().empty();
     }
-    
+
 }

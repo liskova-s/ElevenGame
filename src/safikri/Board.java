@@ -24,6 +24,15 @@ public class Board {
         prepareBoard();
     }
 
+    public Deck getDeck() {
+        return deck;
+    }
+    
+
+    public Card[] getBoard() {
+        return board;
+    }
+
     private Card[] prepareBoard() {
         Card[] prep = new Card[cardNum];
         deck.shuffle();
@@ -63,7 +72,14 @@ public class Board {
     }
 
     public boolean elevenPresent() {
-        
+        for (int i = 0; i < board.length; i++) {
+            for (int j = i + 1; j < board.length; j++) {
+                if (board[i].getRank() + board[j].getRank() == 11) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
 }
