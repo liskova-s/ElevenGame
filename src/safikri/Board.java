@@ -33,13 +33,13 @@ public class Board {
         return board;
     }
 
-    private Card[] prepareBoard() {
+    private void prepareBoard() {
         Card[] prep = new Card[cardNum];
         deck.shuffle();
         for (int i = 0; i < cardNum; i++) {
             prep[i] = deck.draw();
         }
-        return prep;
+        board = prep;
     }
 
     public Card getCardAt(int inx) {
@@ -81,5 +81,12 @@ public class Board {
         }
         return false;
     }
-
+    public static void main(String[] args) {
+        Deck d =new Deck();
+        Board b=new Board(d);
+        b.prepareBoard();
+        System.out.println(b.getCardAt(2));
+        
+        
+    }
 }
