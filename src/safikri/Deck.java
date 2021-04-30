@@ -58,7 +58,7 @@ public class Deck {
         return deckStack.size();
     }
     
-   
+   /*
     public static void main(String[] args) {
         Deck d = new Deck();
         String[][] permts = d.getPermts();
@@ -81,6 +81,6 @@ public class Deck {
         for (Card c : d.deckStack) {
             System.out.print(c.toString());
         }
-    }
+    }*/
 
 }

@@ -62,26 +62,41 @@ public class ElevenGame implements GameInterface {
 
     @Override
     public boolean playAndReplace(List<Integer> iSelectedCards) {
-        if (iSelectedCards.size() < 2 || iSelectedCards.size() > 3) {
+        boolean playable = false;
+        if (iSelectedCards.size() > 3) {
             return false;
         } else if (iSelectedCards.size() == 3) {
+            boolean triple = true;
             for (int i = 0; i < 3; i++) {
                 if (gameBoard.getBoard()[iSelectedCards.get(i)].getRank() != 0) {
-                    return false;
+                    triple = false;
                 }
             }
-            return true;
+            playable = triple;
         } else {
             if (gameBoard.getBoard()[iSelectedCards.get(0)].getRank() + gameBoard.getBoard()[iSelectedCards.get(1)].getRank() == 11) {
-                return true;
+                playable = true;
+            } else {
+                playable = false;
             }
-            return false;
         }
+
+        if (playable) {
+            for (Integer selected : iSelectedCards) {
+                gameBoard.setBoard(selected, gameDeck.draw());
+            }
+            return true;
+        }
+        return false;
     }
 
     @Override
     public boolean isWon() {
         return gameBoard.getDeck().getDeckStack().empty();
     }
-
+    /*
+    public static void main(String[] args) {
+        ElevenGame g=new ElevenGame();
+        System.out.println(g.getCardDescriptionAt(2));
+    }*/
 }

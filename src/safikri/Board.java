@@ -27,7 +27,10 @@ public class Board {
     public Deck getDeck() {
         return deck;
     }
-    
+
+    public void setBoard(int index, Card c) {
+        this.board[index] = c;
+    }
 
     public Card[] getBoard() {
         return board;
@@ -81,12 +84,12 @@ public class Board {
         }
         return false;
     }
+    /*
     public static void main(String[] args) {
         Deck d =new Deck();
         Board b=new Board(d);
         b.prepareBoard();
         System.out.println(b.getCardAt(2));
         
-        
-    }
+    }*/
 }
